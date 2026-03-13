@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Riduan 7 day Ban - Pro FF Ban System</title>
+    
+    <link rel="manifest" href="/static/manifest.json">
+    <meta name="theme-color" content="#dc2626">
+    <link rel="icon" href="https://i.ibb.co.com/KjRqhbpV/1773072208216.jpg" type="image/jpeg">
+    <link rel="apple-touch-icon" href="https://i.ibb.co.com/KjRqhbpV/1773072208216.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Riduan Ban">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <canvas id="matrixCanvas"></canvas>
+
+    <div class="container relative-content">
+        <header class="header">
+            <img src="https://i.ibb.co.com/KjRqhbpV/1773072208216.jpg" alt="Logo" class="main-logo-img">
+            <h1 class="logo">RIDUAN <span>FF BAN</span></h1>
+            <p class="tagline">Advanced Server-Side Execution Tool</p>
+        </header>
+
+        <main class="main-content">
+            <div class="execution-section glow-box glass">
+                <div class="section-header">
+                    <h2><i class="fas fa-terminal"></i> Execute Ban Protocol</h2>
+                    <p>আপনার ভ্যালিড Access Token নিচে প্রবেশ করান</p>
+                </div>
+                
+                <form id="banForm" class="ban-form">
+                    <div class="input-group">
+                        <div class="input-with-icon">
+                            <i class="fas fa-key input-icon"></i>
+                            <input 
+                                type="password" 
+                                id="accessToken" 
+                                name="accessToken" 
+                                placeholder="এখানে Access Token দিন..."
+                                required
+                                autocomplete="off"
+                            >
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <span id="btnText"><i class="fas fa-bolt"></i> INITIATE 7-DAY BAN</span>
+                        <span id="btnSpinner" class="hidden">
+                            <i class="fas fa-circle-notch fa-spin"></i> Processing...
+                        </span>
+                    </button>
+                </form>
+            </div>
+
+            <div id="resultArea" class="hidden"></div>
+
+            <div class="features-grid">
+                <div class="feature-card glow-box glass">
+                    <i class="fas fa-key feature-icon"></i>
+                    <h3>Access Token</h3>
+                    <p>আপনার Free Fire একাউন্টের Access Token দিন। এটি পেতে Garena App থেকে সংগ্রহ করুন।</p>
+                </div>
+                <div class="feature-card glow-box glass">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>৭ দিনের ব্যান</h3>
+                    <p>এই টুল ব্যবহার করে আপনি আপনার নিজের আইডি ৭ দিনের জন্য ব্যান করতে পারবেন।</p>
+                </div>
+                <div class="feature-card glow-box glass">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>নিরাপদ প্রক্রিয়া</h3>
+                    <p>সম্পূর্ণ নিরাপদ প্রক্রিয়া। আপনার তথ্য কোথাও সংরক্ষণ করা হয় না।</p>
+                </div>
+            </div>
+
+            <div class="disclaimer glow-box-warning glass">
+                <i class="fas fa-exclamation-triangle warning-icon"></i>
+                <div class="warning-text">
+                    <strong>সতর্কতা:</strong> এটি শুধুমাত্র মজার উদ্দেশ্যে ব্যবহার করার জন্য তৈরি করা হয়েছে। 
+                    অনুগ্রহ করে এটি কারও ক্ষতি করা, বিরক্ত করা বা কোনো ধরনের অপব্যবহারের জন্য ব্যবহার করবেন না। 
+                    সবার নিরাপত্তা ও সম্মান বজায় রাখুন। ধন্যবাদ।
+                </div>
+            </div>
+
+            <div class="developer-info glow-box glass">
+                <h3><i class="fas fa-code"></i> Connect with Developer</h3>
+                <p>Riduanul Islam - এর সাথে যুক্ত থাকুন</p>
+                <div class="social-icons-row">
+                    <a href="https://youtube.com/@riduan0?si=XJ49BbesZP7jNG--" target="_blank" class="social-icon youtube" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.facebook.com/share/1CQKMvNX5v/" target="_blank" class="social-icon facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/riduanulislam03?igsh=eWZ6cWo0bWc0bjdy" target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://t.me/RiduanOfficialBD" target="_blank" class="social-icon telegram" title="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://www.tiktok.com/@riduanulislam03?_r=1&_t=ZS-94dCn9J7i59" target="_blank" class="social-icon tiktok" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 <strong>Riduanul Islam</strong>. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // === Background Animation: BRIGHT Red Matrix ===
+        const canvas = document.getElementById('matrixCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+        }
+        resizeCanvas();
+
+        const numbers = "0101010101";
+        const characters = numbers.split("");
+        const fontSize = 18;
+        const columns = canvas.width / fontSize;
+        const drops = [];
+
+        for (let x = 0; x < columns; x++) drops[x] = Math.random() * -100;
+
+        function drawMatrix() {
+            ctx.fillStyle = "rgba(0, 0, 0, 0.08)"; 
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = "#ff1111"; 
+            ctx.font = "bold " + fontSize + "px monospace";
+
+            for (let i = 0; i < drops.length; i++) {
+                const text = characters[Math.floor(Math.random() * characters.length)];
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                drops[i]++;
+            }
+        }
+
+        window.addEventListener('resize', resizeCanvas);
+        setInterval(drawMatrix, 40); 
+
+        // === Form Submission Logic ===
+        document.getElementById('banForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const token = document.getElementById('accessToken').value.trim();
+            if (!token) return showResult('error', 'Authentication Failed', 'দয়া করে Access Token দিন।');
+
+            setLoading(true);
+            try {
+                const response = await fetch('/api/ban', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ accessToken: token })
+                });
+                const data = await response.json();
+                
+                if (data.success) {
+                    let details = data.data || {};
+                    let resultHTML = `
+                        <div class="result-card success glass glow-box">
+                            <div class="result-header"><i class="fas fa-check-circle"></i> <span>ব্যান সফল হয়েছে!</span></div>
+                            <div class="result-body">
+                                <div class="data-row"><span>Account ID:</span> <code>${details.account_id || 'N/A'}</code></div>
+                                <div class="data-row"><span>Open ID:</span> <code>${details.open_id || 'N/A'}</code></div>
+                            </div>
+                        </div>`;
+                    showResult('success', resultHTML);
+                } else {
+                    showResult('error', 'Execution Failed', data.error || 'অজানা এরর দেখা দিয়েছে।');
+                }
+            } catch (error) {
+                showResult('error', 'Network Error', error.message);
+            } finally {
+                setLoading(false);
+            }
+        });
+
+        function setLoading(isLoading) {
+            const btn = document.getElementById('submitBtn'), btnText = document.getElementById('btnText'), btnSpinner = document.getElementById('btnSpinner');
+            btn.disabled = isLoading;
+            btnText.classList.toggle('hidden', isLoading);
+            btnSpinner.classList.toggle('hidden', !isLoading);
+        }
+
+        function showResult(type, title, message = '') {
+            const resultArea = document.getElementById('resultArea');
+            resultArea.classList.remove('hidden');
+            if (type === 'error') {
+                resultArea.innerHTML = `<div class="result-card error glass glow-box-warning"><div class="result-header"><i class="fas fa-times-circle"></i> <span>${title}</span></div><p class="error-msg">${message}</p></div>`;
+            } else {
+                resultArea.innerHTML = title;
+            }
+            resultArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // === Register Service Worker for native PWA installation ===
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/static/sw.js');
+            });
+        }
+    </script>
+</body>
+</html>
