@@ -1,0 +1,24 @@
+{
+  "name": "Riduan 7 day Ban",
+  "short_name": "Riduan Ban Tools",
+  "description": "7 Days Free Fire ID Ban Tool",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0f19",
+  "theme_color": "#dc2626",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://i.ibb.co.com/KjRqhbpV/1773072208216.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://i.ibb.co.com/KjRqhbpV/1773072208216.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
+}
